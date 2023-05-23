@@ -20,4 +20,4 @@ jobs:
  
     - id: write-log
       name: Write Token to Console
-      run: echo ${{ steps.adb-login.outputs.token }}
+      run: echo ${{ steps.aadgraph-login.outputs.token }}
