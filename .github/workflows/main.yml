@@ -1,0 +1,16 @@
+on: push
+
+env:
+  clientId: 00000000-0000-0000-0000-000000000000
+  tenant: your-tenant.onmicrosoft.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get files
+      uses: actions/checkout@v2
+
+    - name: Azure Active Directory Application
+      uses: urmade/AAD_Service-Principal_Action@v1.0
+ 
