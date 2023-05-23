@@ -18,3 +18,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         resource-type-name: AadGraph
  
+    - id: write-log
+      name: Write Token to Console
+      run: echo ${{ steps.adb-login.outputs.token }}
