@@ -18,6 +18,13 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         resource-type-name: AadGraph
  
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1.2.0
+      with:
+        inlineScript: Get-AzureADMSNamedLocationPolicy
+        # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
+        azPSVersion: latest
+   
     - id: write-log
       name: Write Token to Console
       run: echo ${{ steps.aadgraph-login.outputs.token }}
